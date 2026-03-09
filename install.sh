@@ -31,6 +31,11 @@ if ! command -v chezmoi &>/dev/null; then
   brew install chezmoi
 fi
 
+mkdir -p "$HOME/.config/chezmoi"
+cat > "$HOME/.config/chezmoi/chezmoi.toml" << EOF
+sourceDir = "$DOTFILES_DIR"
+EOF
+
 chezmoi init --source "$DOTFILES_DIR" --apply
 
 echo ""
