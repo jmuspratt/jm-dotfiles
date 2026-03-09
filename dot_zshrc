@@ -1,0 +1,36 @@
+# PATH
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Editor
+export EDITOR='code'
+
+# oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="spaceship"
+SPACESHIP_BATTERY_SHOW=false
+source "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
+# fnm — node version manager (replaces nvm, respects .nvmrc)
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# exiftool: rename media files in cwd by their EXIF timestamp
+# --ext EXCLUDES a file extension, -ext INCLUDES it
+mediaName() {
+  exiftool --ext MOV '-filename<CreateDate' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
+  exiftool -ext MOV '-filename<MediaCreateDate' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
+  exiftool -ext MOV '-filename<DateTimeOriginal' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
+}
+
+# exifstamp: set DateTimeOriginal from filename (expects YYYY-MM-DD prefix)
+exifstamp() {
+  exiftool '-datetimeoriginal<${filename} 00:00:00/' .
+}
+
+# Machine-specific config (gitignored) — server aliases, private tokens, etc.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
