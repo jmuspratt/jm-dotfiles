@@ -20,11 +20,14 @@ source $ZSH/oh-my-zsh.sh
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # exiftool: rename media files in cwd by their EXIF timestamp
-# --ext EXCLUDES a file extension, -ext INCLUDES it
+# Tags are tried in order; later tags override earlier ones, so priority is:
+# DateTimeOriginal > MediaCreateDate > CreateDate
 mediaName() {
-  exiftool --ext MOV '-filename<CreateDate' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
-  exiftool -ext MOV '-filename<MediaCreateDate' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
-  exiftool -ext MOV '-filename<DateTimeOriginal' -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
+  exiftool \
+    '-filename<CreateDate' \
+    '-filename<MediaCreateDate' \
+    '-filename<DateTimeOriginal' \
+    -d %Y-%m-%d-%H-%M-%S%%-c.%%le -api QuickTimeUTC=1 .
 }
 
 # exifstamp: set DateTimeOriginal from filename (expects YYYY-MM-DD prefix)
