@@ -22,7 +22,6 @@ cask "visual-studio-code"
 # Design / creative
 cask "acorn"            # direct download (also on MAS)
 cask "blender"
-cask "davinci-resolve"
 cask "figma"
 cask "kaleidoscope"
 cask "pdfpen"

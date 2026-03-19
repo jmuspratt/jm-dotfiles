@@ -12,12 +12,20 @@ if [[ $(uname -m) == 'arm64' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew bundle --file="$DOTFILES_DIR/Brewfile"
+brew bundle --file="$DOTFILES_DIR/Brewfile" || echo "⚠️  Some packages failed (MAS apps require App Store sign-in). Continuing..."
 
 # ——— oh-my-zsh ————————————————————————————————————
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
+
+# ——— oh-my-zsh plugins (installed via Homebrew) ————
+mkdir -p "$HOME/.oh-my-zsh/custom/plugins"
+for plugin in zsh-autosuggestions zsh-syntax-highlighting; do
+  if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/$plugin" ]; then
+    ln -sf "$(brew --prefix)/share/$plugin" "$HOME/.oh-my-zsh/custom/plugins/$plugin"
+  fi
+done
 
 # ——— Spaceship theme ——————————————————————————————
 SPACESHIP_DIR="$HOME/.oh-my-zsh/custom/themes/spaceship-prompt"

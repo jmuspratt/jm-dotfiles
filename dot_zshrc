@@ -12,9 +12,13 @@ ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW=false
 source "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 
-ZSH_CUSTOM=~/.oh-my-zsh/custom
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git)
+
 source $ZSH/oh-my-zsh.sh
+
+# Plugins installed via Homebrew (sourced directly)
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # fnm — node version manager (replaces nvm, respects .nvmrc)
 eval "$(fnm env --use-on-cd --shell zsh)"
