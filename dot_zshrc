@@ -23,6 +23,9 @@ source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 # fnm — node version manager (replaces nvm, respects .nvmrc)
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+# zoxide — smarter cd
+eval "$(zoxide init zsh)"
+
 # exiftool: rename media files in cwd by their EXIF timestamp
 # Tags are tried in order; later tags override earlier ones, so priority is:
 # DateTimeOriginal > MediaCreateDate > CreateDate

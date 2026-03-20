@@ -3,6 +3,11 @@ brew "git"
 brew "git-lfs"
 brew "fnm"
 brew "exiftool"
+brew "ffmpeg"
+brew "gh"
+brew "imagemagick"
+brew "yt-dlp"
+brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "mas"
@@ -60,13 +65,7 @@ cask "vienna"
 # Requires: signing into the App Store before running `brew bundle`
 
 # Third-party MAS apps
-mas "Affinity Designer 2", id: 1616831348
-mas "Affinity Photo 2",    id: 1616822987
-mas "Affinity Publisher 2",id: 1606941598
 mas "Bear",                id: 1091189122
-mas "Clocker",             id: 1056643111
-mas "Ice Cubes",           id: 1642288028
-mas "Parcel",              id: 639968404
 mas "Shapr3D",             id: 1091675654
 mas "Trello",              id: 1278508951
 
@@ -76,8 +75,6 @@ mas "Trello",              id: 1278508951
 #   Adobe apps        — install inside Creative Cloud after cask installs it
 #   Screens 5         — MAS (cask deprecated); id may be 1663047912
 #   Readwise Reader   — no cask; download from readwise.io
-#   Glyphfinder       — check glyphfinder.com or MAS
 #   Kaleidoscope      — cask above; needs license
-#   Save to Reader    — browser extension
 #   Cavalry, Eduard, Fastmail, Table Tool
 #   — verify on MAS or vendor site
