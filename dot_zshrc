@@ -20,8 +20,10 @@ source $ZSH/oh-my-zsh.sh
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# fnm — node version manager (replaces nvm, respects .nvmrc)
-eval "$(fnm env --use-on-cd --shell zsh)"
+# nvm — node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # zoxide — smarter cd
 eval "$(zoxide init zsh)"

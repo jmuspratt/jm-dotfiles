@@ -1,7 +1,6 @@
 # CLI tools
 brew "git"
 brew "git-lfs"
-brew "fnm"
 brew "exiftool"
 brew "ffmpeg"
 brew "gh"
