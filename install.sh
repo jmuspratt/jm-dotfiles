@@ -47,24 +47,7 @@ EOF
 chezmoi init --source "$DOTFILES_DIR" --apply
 
 # ——— Helium extensions ————————————————————————————
-PLIST="/Library/Managed Preferences/net.imput.helium.plist"
-EXTENSIONS_FILE="$DOTFILES_DIR/helium-extensions.txt"
-UPDATE_URL="https://clients2.google.com/service/update2/crx"
-
-if [ -f "$EXTENSIONS_FILE" ]; then
-  echo "Installing Helium extensions (requires sudo)..."
-  FORCELIST=()
-  while IFS= read -r line; do
-    id=$(echo "$line" | sed 's/#.*//' | tr -d '[:space:]')
-    [ -n "$id" ] && FORCELIST+=("${id};${UPDATE_URL}")
-  done < "$EXTENSIONS_FILE"
-
-  if sudo defaults write "$PLIST" ExtensionInstallForcelist -array "${FORCELIST[@]}"; then
-    echo "✓ Helium extensions policy written. Relaunch Helium to install."
-  else
-    echo "⚠️  Could not write Helium policy (skipping)."
-  fi
-fi
+"$DOTFILES_DIR/install-helium-extensions.sh" || echo "⚠️  Helium extensions skipped."
 
 echo ""
 echo "Done! Restart your terminal."
