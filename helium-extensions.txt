@@ -1,0 +1,9 @@
+# Helium Browser Extensions
+# One extension ID per line. Comments and blank lines are ignored.
+# To find an ID: chrome://extensions > Details > copy the ID from the URL.
+
+aeblfdkhhhdcdjpifhhbdiojplfjncoa  # 1Password
+cnjifjpddelmedmihgijeibhnjfabmlf  # Obsidian Web Clipper
+ddkjiahejlhfcafbddmgiahcphecmpfh  # uBlock Origin Lite
+jjhefcfhmnkfeepcpnilbbkaadhngkbi  # Readwise Highlighter
+lkihjlcipnbgeokmfnpogjfflofbfhga  # Are.na

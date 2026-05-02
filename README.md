@@ -8,11 +8,52 @@ cd ~/Sites/jm-dotfiles
 sh install.sh
 ```
 
-The script installs Homebrew, packages from the Brewfile, oh-my-zsh with the Spaceship theme, then applies dotfiles via chezmoi.
+The script:
+1. Installs Homebrew if missing
+2. Runs `brew bundle` (CLI tools, casks, MAS apps)
+3. Installs oh-my-zsh with the Spaceship theme
+4. Applies dotfiles via chezmoi (`dot_zshrc` → `~/.zshrc`, `dot_gitconfig` → `~/.gitconfig`)
+5. Writes a Helium browser extension policy (requires sudo)
 
 ## Brewfile
 
-[Brewfile](Brewfile) covers CLI tools, casks (browsers, dev tools, design, productivity, communication, media, utilities), and Mac App Store apps via `mas`.
+### CLI tools
+
+| Package | Purpose |
+|---|---|
+| `git`, `git-lfs`, `gh` | Git and GitHub CLI |
+| `exiftool`, `ffmpeg`, `imagemagick`, `yt-dlp` | Media processing |
+| `zoxide` | Smarter `cd` |
+| `zsh-autosuggestions`, `zsh-syntax-highlighting` | zsh plugins (sourced in `.zshrc`) |
+| `mas` | Mac App Store CLI |
+
+### Casks
+
+| Category | Apps |
+|---|---|
+| Browsers | Brave, Firefox, Google Chrome |
+| Dev | Docker, Sequel Ace, VS Code |
+| Design | Acorn, Blender, Figma, Kaleidoscope, PDFpen, RightFont |
+| Productivity | 1Password, Granola, Notion Calendar, Obsidian, Raycast, Soulver, Todoist, Transmit |
+| Communication | Discord, Slack, Zoom |
+| Media | Plex, Plexamp, VLC |
+| Utilities | Adobe DNG Converter, Claude, NordVPN, QGIS, Sonos, Tailscope, Vienna |
+
+### Mac App Store
+
+Bear, Shapr3D, Trello
+
+> **Note:** MAS installs require signing into the App Store before running `brew bundle`.
+
+### Manual installs
+
+These can't be automated — install by hand after running `brew bundle`:
+
+- **Adobe apps** — install inside Creative Cloud after the cask installs it
+- **Helium browser** — no cask; download from imput.net
+- **Screens 5** — MAS (cask deprecated)
+- **Readwise Reader** — no cask; download from readwise.io
+- Others: Cavalry, Eduard, Fastmail, Table Tool
 
 To install packages without running the full setup script:
 
@@ -20,13 +61,41 @@ To install packages without running the full setup script:
 brew bundle
 ```
 
-> **Note:** MAS installs require you to be signed into the App Store first. A small number of apps can't be automated — see the comments at the bottom of the Brewfile for manual install instructions.
+## Helium extensions
+
+[helium-extensions.txt](helium-extensions.txt) is the canonical extension list. `install.sh` writes a managed policy to `/Library/Managed Preferences/net.imput.helium.plist`, which causes Helium to auto-install them on next launch.
+
+Current extensions:
+- 1Password
+- Obsidian Web Clipper
+- uBlock Origin Lite
+- Readwise Highlighter
+- Are.na
+
+To add or remove an extension, edit `helium-extensions.txt` (one ID per line, `#` comments supported) and re-run `install.sh`.
+
+## Shell (`dot_zshrc`)
+
+- Default editor: VS Code (`$EDITOR=code`)
+- oh-my-zsh with Spaceship theme (battery indicator hidden)
+- Plugins: `git`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
+- nvm for Node version management
+- zoxide for smarter `cd`
+- `mediaName()` — renames files in cwd by EXIF timestamp (DateTimeOriginal > MediaCreateDate > CreateDate)
+- `exifstamp()` — writes DateTimeOriginal from filename (expects `YYYY-MM-DD` prefix)
+- Sources `~/.zshrc.local` if present (gitignored; use for machine-specific config, aliases, tokens)
+
+## Git (`dot_gitconfig`)
+
+- Default branch: `main`
+- Diff and merge tool: Kaleidoscope
+- git-lfs configured
 
 ## After install
 
 - Generate SSH key and add to GitHub: `ssh-keygen -t ed25519 -C 'your@email.com'`
 - Sign in to VS Code Settings Sync (GitHub account)
-- Create `~/.zshrc.local` for anything machine-specific (server aliases, private tokens, etc.) — this file is gitignored
+- Create `~/.zshrc.local` for machine-specific config
 
 ## Updating dotfiles
 
