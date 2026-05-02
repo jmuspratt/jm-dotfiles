@@ -3,7 +3,10 @@
 # To find an ID: chrome://extensions > Details > copy the ID from the URL.
 
 aeblfdkhhhdcdjpifhhbdiojplfjncoa  # 1Password
-cnjifjpddelmedmihgijeibhnjfabmlf  # Obsidian Web Clipper
-ddkjiahejlhfcafbddmgiahcphecmpfh  # uBlock Origin Lite
+fnaicdffflnofjppbagibeoednhnbjhg  # Floccus (bookmark sync)
+egabpkinlpdcimbopmegnngdbaglanmk  # ExTa Pro (Instagram downloader)
+fcoeoabgfenejglbffodgkkbkcdhcgfn  # Claude
 jjhefcfhmnkfeepcpnilbbkaadhngkbi  # Readwise Highlighter
+kkelicaakdanhinjdeammmilcgefonfh  # Window Resizer
 lkihjlcipnbgeokmfnpogjfflofbfhga  # Are.na
+plgfpbpiognbacbokboelbepkalnclnd  # Download All Images

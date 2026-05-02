@@ -67,10 +67,13 @@ brew bundle
 
 Current extensions:
 - 1Password
-- Obsidian Web Clipper
-- uBlock Origin Lite
+- Floccus (bookmark sync)
+- ExTa Pro (Instagram downloader)
+- Claude
 - Readwise Highlighter
+- Window Resizer
 - Are.na
+- Download All Images
 
 To add or remove an extension, edit `helium-extensions.txt` (one ID per line, `#` comments supported) and re-run `install.sh`.
 
