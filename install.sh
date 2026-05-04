@@ -46,9 +46,6 @@ EOF
 
 chezmoi init --source "$DOTFILES_DIR" --apply
 
-# ——— Helium extensions ————————————————————————————
-"$DOTFILES_DIR/install-helium-extensions.sh" || echo "⚠️  Helium extensions skipped."
-
 echo ""
 echo "Done! Restart your terminal."
 echo ""

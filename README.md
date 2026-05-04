@@ -63,19 +63,16 @@ brew bundle
 
 ## Helium extensions
 
-[helium-extensions.txt](helium-extensions.txt) is the canonical extension list. `install.sh` writes a managed policy to `/Library/Managed Preferences/net.imput.helium.plist`, which causes Helium to auto-install them on next launch.
+Helium doesn't sync extensions. Install these manually on each machine:
 
-Current extensions:
-- 1Password
-- Floccus (bookmark sync)
-- ExTa Pro (Instagram downloader)
-- Claude
-- Readwise Highlighter
-- Window Resizer
-- Are.na
-- Download All Images
-
-To add or remove an extension, edit `helium-extensions.txt` (one ID per line, `#` comments supported) and re-run `install.sh`.
+- [1Password](https://chromewebstore.google.com/detail/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
+- [Floccus](https://chromewebstore.google.com/detail/fnaicdffflnofjppbagibeoednhnbjhg) (bookmark sync)
+- [ExTa Pro](https://chromewebstore.google.com/detail/egabpkinlpdcimbopmegnngdbaglanmk) (Instagram downloader)
+- [Claude](https://chromewebstore.google.com/detail/fcoeoabgfenejglbffodgkkbkcdhcgfn)
+- [Readwise Highlighter](https://chromewebstore.google.com/detail/jjhefcfhmnkfeepcpnilbbkaadhngkbi)
+- [Window Resizer](https://chromewebstore.google.com/detail/kkelicaakdanhinjdeammmilcgefonfh)
+- [Are.na](https://chromewebstore.google.com/detail/lkihjlcipnbgeokmfnpogjfflofbfhga)
+- [Download All Images](https://chromewebstore.google.com/detail/plgfpbpiognbacbokboelbepkalnclnd)
 
 ## Shell (`dot_zshrc`)
 
