@@ -2,9 +2,13 @@
 set -e
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
-CANONICAL="$DOTFILES_DIR/bookmarks/helium.json"
 HELIUM_DIR="$HOME/Library/Application Support/net.imput.helium"
-PROFILES=("Default" "Profile 1" "Profile 2")
+
+declare -A PROFILES=(
+  [personal]="Default"
+  [work]="Profile 1"
+  [social]="Profile 2"
+)
 
 # ——— Guard ————————————————————————————————————————————
 if pgrep -xq "Helium"; then
@@ -17,36 +21,48 @@ cmd="${1:-help}"
 
 case "$cmd" in
   push)
-    # Copy canonical bookmarks → all profiles
-    for profile in "${PROFILES[@]}"; do
-      dest="$HELIUM_DIR/$profile/Bookmarks"
-      if [[ -d "$HELIUM_DIR/$profile" ]]; then
-        cp "$CANONICAL" "$dest"
-        echo "  → $profile"
+    for name in "${!PROFILES[@]}"; do
+      dir="${PROFILES[$name]}"
+      src="$DOTFILES_DIR/bookmarks/helium-$name.json"
+      dest="$HELIUM_DIR/$dir/Bookmarks"
+      if [[ -f "$src" && -d "$HELIUM_DIR/$dir" ]]; then
+        cp "$src" "$dest"
+        echo "  → $name ($dir)"
       fi
     done
     echo "Done. Launch Helium to apply."
     ;;
 
   pull)
-    # Capture Default profile → canonical source
-    src="$HELIUM_DIR/Default/Bookmarks"
-    cp "$src" "$CANONICAL"
-    echo "Captured Default → bookmarks/helium.json"
-    echo "Review with: git diff bookmarks/helium.json"
+    for name in "${!PROFILES[@]}"; do
+      dir="${PROFILES[$name]}"
+      src="$HELIUM_DIR/$dir/Bookmarks"
+      dest="$DOTFILES_DIR/bookmarks/helium-$name.json"
+      if [[ -f "$src" ]]; then
+        cp "$src" "$dest"
+        echo "  ← $name ($dir)"
+      fi
+    done
+    echo "Done. Review with: git diff bookmarks/"
     ;;
 
   diff)
-    diff <(python3 -m json.tool "$CANONICAL") \
-         <(python3 -m json.tool "$HELIUM_DIR/Default/Bookmarks") \
-      && echo "No differences."
+    for name in "${!PROFILES[@]}"; do
+      dir="${PROFILES[$name]}"
+      canonical="$DOTFILES_DIR/bookmarks/helium-$name.json"
+      live="$HELIUM_DIR/$dir/Bookmarks"
+      echo "=== $name ==="
+      diff <(python3 -m json.tool "$canonical") \
+           <(python3 -m json.tool "$live") \
+        && echo "  No differences."
+    done
     ;;
 
   *)
     echo "Usage: $0 <command>"
     echo ""
-    echo "  push   Copy bookmarks/helium.json to all Helium profiles"
-    echo "  pull   Capture Default profile back to bookmarks/helium.json"
-    echo "  diff   Compare canonical source against Default profile"
+    echo "  push   Copy all canonical bookmarks → Helium profiles"
+    echo "  pull   Capture all Helium profiles → bookmarks/"
+    echo "  diff   Compare canonical files against live profiles"
     ;;
 esac
