@@ -9,35 +9,35 @@ sh install.sh
 ```
 
 The script:
+
 1. Installs Homebrew if missing
 2. Runs `brew bundle` (CLI tools, casks, MAS apps)
 3. Installs oh-my-zsh with the Spaceship theme
 4. Applies dotfiles via chezmoi (`dot_zshrc` → `~/.zshrc`, `dot_gitconfig` → `~/.gitconfig`)
-5. Writes a Helium browser extension policy (requires sudo)
 
 ## Brewfile
 
 ### CLI tools
 
-| Package | Purpose |
-|---|---|
-| `git`, `git-lfs`, `gh` | Git and GitHub CLI |
-| `exiftool`, `ffmpeg`, `imagemagick`, `yt-dlp` | Media processing |
-| `zoxide` | Smarter `cd` |
+| Package                                          | Purpose                           |
+| ------------------------------------------------ | --------------------------------- |
+| `git`, `git-lfs`, `gh`                           | Git and GitHub CLI                |
+| `exiftool`, `ffmpeg`, `imagemagick`, `yt-dlp`    | Media processing                  |
+| `zoxide`                                         | Smarter `cd`                      |
 | `zsh-autosuggestions`, `zsh-syntax-highlighting` | zsh plugins (sourced in `.zshrc`) |
-| `mas` | Mac App Store CLI |
+| `mas`                                            | Mac App Store CLI                 |
 
 ### Casks
 
-| Category | Apps |
-|---|---|
-| Browsers | Brave, Firefox, Google Chrome |
-| Dev | Docker, Sequel Ace, VS Code |
-| Design | Acorn, Blender, Figma, Kaleidoscope, PDFpen, RightFont |
-| Productivity | 1Password, Granola, Notion Calendar, Obsidian, Raycast, Soulver, Todoist, Transmit |
-| Communication | Discord, Slack, Zoom |
-| Media | Plex, Plexamp, VLC |
-| Utilities | Adobe DNG Converter, Claude, NordVPN, QGIS, Sonos, Tailscope, Vienna |
+| Category      | Apps                                                                               |
+| ------------- | ---------------------------------------------------------------------------------- |
+| Browsers      | Brave, Firefox, Google Chrome                                                      |
+| Dev           | Docker, Sequel Ace, VS Code                                                        |
+| Design        | Acorn, Blender, Figma, Kaleidoscope, PDFpen, RightFont                             |
+| Productivity  | 1Password, Granola, Notion Calendar, Obsidian, Raycast, Soulver, Todoist, Transmit |
+| Communication | Discord, Slack, Zoom                                                               |
+| Media         | Plex, Plexamp, VLC                                                                 |
+| Utilities     | Adobe DNG Converter, Claude, NordVPN, QGIS, Sonos, Tailscope, Vienna               |
 
 ### Mac App Store
 
@@ -60,19 +60,6 @@ To install packages without running the full setup script:
 ```bash
 brew bundle
 ```
-
-## Helium extensions
-
-Helium doesn't sync extensions. Install these manually on each machine:
-
-- [1Password](https://chromewebstore.google.com/detail/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
-- [Floccus](https://chromewebstore.google.com/detail/fnaicdffflnofjppbagibeoednhnbjhg) (bookmark sync)
-- [ExTa Pro](https://chromewebstore.google.com/detail/egabpkinlpdcimbopmegnngdbaglanmk) (Instagram downloader)
-- [Claude](https://chromewebstore.google.com/detail/fcoeoabgfenejglbffodgkkbkcdhcgfn)
-- [Readwise Highlighter](https://chromewebstore.google.com/detail/jjhefcfhmnkfeepcpnilbbkaadhngkbi)
-- [Window Resizer](https://chromewebstore.google.com/detail/kkelicaakdanhinjdeammmilcgefonfh)
-- [Are.na](https://chromewebstore.google.com/detail/lkihjlcipnbgeokmfnpogjfflofbfhga)
-- [Download All Images](https://chromewebstore.google.com/detail/plgfpbpiognbacbokboelbepkalnclnd)
 
 ## Shell (`dot_zshrc`)
 
