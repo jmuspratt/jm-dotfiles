@@ -15,7 +15,6 @@ brew "mas"
 # ── Casks ─────────────────────────────────────────────────────────────────────
 
 # Browsers
-cask "brave-browser"
 cask "firefox"
 cask "google-chrome"
 
@@ -29,17 +28,15 @@ cask "acorn"            # direct download (also on MAS)
 cask "blender"
 cask "figma"
 cask "kaleidoscope"
-cask "pdfpen"
 cask "rightfont"
 
 # Productivity
 cask "1password"
 cask "granola"
 cask "notion-calendar"
-cask "obsidian"
 cask "raycast"
 cask "soulver"          # direct download (also on MAS)
-cask "todoist"
+cask "todoist-app"
 cask "transmit"
 
 # Communication
@@ -48,18 +45,14 @@ cask "slack"
 cask "zoom"
 
 # Media
-cask "plex"
-cask "plexamp"
+cask "jellyfin-media-player"
 cask "vlc"
 
 # Utilities
-cask "adobe-dng-converter"
 cask "claude"
 cask "nordvpn"
-cask "qgis"
 cask "sonos"
 cask "tailscale"
-cask "vienna"
 
 # ── Mac App Store ─────────────────────────────────────────────────────────────
 # Requires: signing into the App Store before running `brew bundle`
@@ -76,5 +69,6 @@ mas "Trello",              id: 1278508951
 #   Screens 5         — MAS (cask deprecated); id may be 1663047912
 #   Readwise Reader   — no cask; download from readwise.io
 #   Kaleidoscope      — cask above; needs license
+#   PDFpen           — cask URL broken (404); download from smilesoftware.com
 #   Cavalry, Eduard, Fastmail, Table Tool
 #   — verify on MAS or vendor site

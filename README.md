@@ -33,10 +33,10 @@ The script:
 | ------------- | ---------------------------------------------------------------------------------- |
 | Browsers      | Brave, Firefox, Google Chrome                                                      |
 | Dev           | Docker, Sequel Ace, VS Code                                                        |
-| Design        | Acorn, Blender, Figma, Kaleidoscope, PDFpen, RightFont                             |
-| Productivity  | 1Password, Granola, Notion Calendar, Obsidian, Raycast, Soulver, Todoist, Transmit |
+| Design        | Acorn, Blender, Figma, Kaleidoscope, RightFont                                     |
+| Productivity  | 1Password, Granola, Notion Calendar, Raycast, Soulver, Todoist, Transmit           |
 | Communication | Discord, Slack, Zoom                                                               |
-| Media         | Plex, Plexamp, VLC                                                                 |
+| Media         | Jellyfin Media Player, VLC                                                         |
 | Utilities     | Adobe DNG Converter, Claude, NordVPN, QGIS, Sonos, Tailscope, Vienna               |
 
 ### Mac App Store
