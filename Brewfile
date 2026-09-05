@@ -19,7 +19,7 @@ cask "firefox"
 cask "google-chrome"
 
 # Dev
-cask "docker"
+cask "docker-desktop"
 cask "sequel-ace"
 cask "zed"
 
@@ -51,7 +51,7 @@ cask "vlc"
 cask "claude"
 cask "nordvpn"
 cask "sonos"
-cask "tailscale"
+cask "tailscale-app"
 
 # ── Mac App Store ─────────────────────────────────────────────────────────────
 # Requires: signing into the App Store before running `brew bundle`
