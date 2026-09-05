@@ -32,7 +32,7 @@ The script:
 | Category      | Apps                                                                               |
 | ------------- | ---------------------------------------------------------------------------------- |
 | Browsers      | Brave, Firefox, Google Chrome                                                      |
-| Dev           | Docker, Sequel Ace, VS Code                                                        |
+| Dev           | Docker, Sequel Ace, Zed                                                            |
 | Design        | Acorn, Blender, Figma, Kaleidoscope, RightFont                                     |
 | Productivity  | 1Password, Granola, Notion Calendar, Raycast, Soulver, Todoist, Transmit           |
 | Communication | Discord, Slack, Zoom                                                               |
@@ -63,7 +63,7 @@ brew bundle
 
 ## Shell (`dot_zshrc`)
 
-- Default editor: VS Code (`$EDITOR=code`)
+- Default editor: Zed (`$EDITOR="zed --wait"`)
 - oh-my-zsh with Spaceship theme (battery indicator hidden)
 - Plugins: `git`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
 - nvm for Node version management
@@ -81,7 +81,7 @@ brew bundle
 ## After install
 
 - Generate SSH key and add to GitHub: `ssh-keygen -t ed25519 -C 'your@email.com'`
-- Sign in to VS Code Settings Sync (GitHub account)
+- Sign in to Zed with your GitHub account (settings sync)
 - Create `~/.zshrc.local` for machine-specific config
 
 ## Updating dotfiles

@@ -21,7 +21,7 @@ cask "google-chrome"
 # Dev
 cask "docker"
 cask "sequel-ace"
-cask "visual-studio-code"
+cask "zed"
 
 # Design / creative
 cask "acorn"            # direct download (also on MAS)
