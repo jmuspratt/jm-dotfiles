@@ -32,7 +32,6 @@ cask "rightfont"
 
 # Productivity
 cask "1password"
-cask "granola"
 cask "notion-calendar"
 cask "raycast"
 cask "soulver"          # direct download (also on MAS)
@@ -65,10 +64,8 @@ mas "Trello",              id: 1278508951
 # ── Manual installs ───────────────────────────────────────────────────────────
 # These can't be automated — install by hand after running brew bundle:
 #
-#   Adobe apps        — install inside Creative Cloud after cask installs it
 #   Screens 5         — MAS (cask deprecated); id may be 1663047912
 #   Readwise Reader   — no cask; download from readwise.io
 #   Kaleidoscope      — cask above; needs license
-#   PDFpen           — cask URL broken (404); download from smilesoftware.com
 #   Cavalry, Eduard, Fastmail, Table Tool
 #   — verify on MAS or vendor site

@@ -24,6 +24,7 @@ The script:
 | `git`, `git-lfs`, `gh`                           | Git and GitHub CLI                |
 | `exiftool`, `ffmpeg`, `imagemagick`, `yt-dlp`    | Media processing                  |
 | `zoxide`                                         | Smarter `cd`                      |
+| `nvm`                                            | Node version manager              |
 | `zsh-autosuggestions`, `zsh-syntax-highlighting` | zsh plugins (sourced in `.zshrc`) |
 | `mas`                                            | Mac App Store CLI                 |
 
@@ -31,13 +32,13 @@ The script:
 
 | Category      | Apps                                                                               |
 | ------------- | ---------------------------------------------------------------------------------- |
-| Browsers      | Brave, Firefox, Google Chrome                                                      |
+| Browsers      | Firefox, Google Chrome                                                             |
 | Dev           | Docker, Sequel Ace, Zed                                                            |
 | Design        | Acorn, Blender, Figma, Kaleidoscope, RightFont                                     |
-| Productivity  | 1Password, Granola, Notion Calendar, Raycast, Soulver, Todoist, Transmit           |
+| Productivity  | 1Password, Notion Calendar, Raycast, Soulver, Todoist, Transmit                    |
 | Communication | Discord, Slack, Zoom                                                               |
 | Media         | Jellyfin Media Player, VLC                                                         |
-| Utilities     | Adobe DNG Converter, Claude, NordVPN, QGIS, Sonos, Tailscope, Vienna               |
+| Utilities     | Claude, NordVPN, Sonos, Tailscale                                                  |
 
 ### Mac App Store
 
@@ -49,7 +50,6 @@ Bear, Shapr3D, Trello
 
 These can't be automated — install by hand after running `brew bundle`:
 
-- **Adobe apps** — install inside Creative Cloud after the cask installs it
 - **Helium browser** — no cask; download from imput.net
 - **Screens 5** — MAS (cask deprecated)
 - **Readwise Reader** — no cask; download from readwise.io
