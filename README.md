@@ -25,6 +25,7 @@ The script:
 | `exiftool`, `ffmpeg`, `imagemagick`, `yt-dlp`    | Media processing                  |
 | `zoxide`                                         | Smarter `cd`                      |
 | `nvm`                                            | Node version manager              |
+| `pyenv`                                          | Python version manager            |
 | `zsh-autosuggestions`, `zsh-syntax-highlighting` | zsh plugins (sourced in `.zshrc`) |
 | `mas`                                            | Mac App Store CLI                 |
 
@@ -67,6 +68,7 @@ brew bundle
 - oh-my-zsh with Spaceship theme (battery indicator hidden)
 - Plugins: `git`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
 - nvm for Node version management
+- pyenv for Python version management (both guarded: no-ops if the tool isn't installed yet)
 - zoxide for smarter `cd`
 - `mediaName()` — renames files in cwd by EXIF timestamp (DateTimeOriginal > MediaCreateDate > CreateDate)
 - `exifstamp()` — writes DateTimeOriginal from filename (expects `YYYY-MM-DD` prefix)
@@ -83,6 +85,9 @@ brew bundle
 - Generate SSH key and add to GitHub: `ssh-keygen -t ed25519 -C 'your@email.com'`
 - Sign in to Zed with your GitHub account (settings sync)
 - Create `~/.zshrc.local` for machine-specific config
+- Install a Python and set it global: `pyenv install 3.13.1 && pyenv global 3.13.1`
+  (pyenv installs no interpreter of its own; without this `python3` stays on
+  Homebrew's, which is whatever major version brew last upgraded to)
 
 ## Updating dotfiles
 
